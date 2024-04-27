@@ -154,7 +154,7 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-_orrico)  
+_Ishtiag Abbaker- [Github]  (https://github.com/IshtiagAbbaker) 
 Nader Albaire - [Github](https://github.com/Nader-Albaire)
 ## License
 Public Domain. No copy write protection. 
