@@ -7,6 +7,8 @@ import pep8 as pycodestyle
 import time
 import unittest
 from unittest import mock
+from freezegun import freeze_time
+from models.base_model import BaseModel
 BaseModel = models.base_model.BaseModel
 module_doc = models.base_model.__doc__
 
@@ -78,6 +80,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(inst.name, "Holberton")
         self.assertEqual(inst.number, 89)
 
+    @freeze_time("2024-04-27 12:00:00")
     def test_datetime_attributes(self):
         """Test that two BaseModel instances have different datetime objects
         and that upon creation have identical updated_at and created_at
@@ -85,6 +88,8 @@ class TestBaseModel(unittest.TestCase):
         tic = datetime.now()
         inst1 = BaseModel()
         toc = datetime.now()
+        time.sleep(0.001)
+        inst2 = BaseModel()
         self.assertTrue(tic <= inst1.created_at <= toc)
         time.sleep(1e-4)
         tic = datetime.now()
