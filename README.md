@@ -154,8 +154,13 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
+<<<<<<< HEAD
 
 Ishtiag Abbaker
 Nader Albaire
+=======
+_Ishtiag Abbaker- [Github]  (https://github.com/IshtiagAbbaker) 
+Nader Albaire - [Github](https://github.com/Nader-Albaire)
+>>>>>>> eb9a5605808ac95e071198eb1c9cb5294c279a91
 ## License
 Public Domain. No copy write protection. 
