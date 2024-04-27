@@ -164,3 +164,12 @@ Nader Albaire - [Github](https://github.com/Nader-Albaire)
 >>>>>>> eb9a5605808ac95e071198eb1c9cb5294c279a91
 ## License
 Public Domain. No copy write protection. 
+## Additional Information:
+
+    Contributions: Ishtiag Abbaker and Nader Albaire were the primary contributors to the initial development of the project. They spearheaded the creation of the command interpreter and laid the foundation for the subsequent segments of the AirBnB project at Holberton School.
+
+    Project Progression: The AirBnB project at Holberton School is an ongoing endeavor, with subsequent segments building upon the work done in the console segment. The project aims to cover fundamental concepts of higher-level programming while progressively developing functionalities to replicate the AirBnB website.
+
+    Collaboration: The development of the project involved collaboration among students and instructors at Holberton School, fostering a learning environment where students could exchange ideas, troubleshoot issues, and collectively work towards project milestones.
+
+    Future Enhancements: As the project evolves, future enhancements may include additional functionalities, optimization of existing code, and integration of advanced features to mirror the full functionality of the AirBnB website.
