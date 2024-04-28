@@ -9,6 +9,9 @@ import pep8
 import unittest
 HBNBCommand = console.HBNBCommand
 
+if __name__ == '__main__':
+    unittest.main()
+
 
 class TestConsoleDocs(unittest.TestCase):
     """Class for testing documentation of the console"""
