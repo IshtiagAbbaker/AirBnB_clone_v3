@@ -29,7 +29,6 @@ Installation
 
 File Descriptions
 
-
 console.py - Entry point of the command interpreter.
 List of commands supported:
 
