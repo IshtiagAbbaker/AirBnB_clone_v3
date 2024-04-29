@@ -102,9 +102,9 @@ class DBStorage:
         self.__session.commit()
 
 <<<<<<< HEAD
-    def delete(self, obaj=None):
+    def delete(self, obj=None):
         """delete from the current database session obj if not None"""
-        if obaj is not None:
+        if obj is not None:
             self.__session.delete(obaj)
 =======
     def delete(self, obj=None):
@@ -128,25 +128,23 @@ class DBStorage:
         self.__session.remove()
 <<<<<<< HEAD
 
-    def get(self, clas, id):
+    def get(self, cls, id):
         """Retrieve an object"""
-        if clas is not None and type(clas) is str and id is not None and\
-           type(id) is str and clas in name2class:
-            clas = name2class[clas]
-            result = self.__session.query(clas).filter(clas.id == id).first()
+        if cls is not None and type(cls) is str and id is not None and\
+           type(id) is str and cls in name2class:
+            cls = name2class[cls]
+            result = self.__session.query(cls).filter(cls.id == id).first()
             return result
         else:
             return None
 
-    def count(self, clas=None):
+    def count(self, cls=None):
         """Count number of objects in storage"""
         total = 0
-        if type(clas) == str and clas in name2class:
-            clas = name2class[clas]
-            total = self.__session.query(clas).count()
-        elif clas is None:
-            for clas in name2class.values():
-                total += self.__session.query(clas).count()
+        if type(cls) == str and cls in name2class:
+            cls = name2class[cls]
+            total = self.__session.query(cls).count()
+        elif cls is None:
+            for cls in name2class.values():
+                total += self.__session.query(cls).count()
         return total
-=======
->>>>>>> 2796a9e7e0ec4944989c635eb139550a458166e0
