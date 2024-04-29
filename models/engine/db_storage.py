@@ -36,7 +36,6 @@ class DBStorage:
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
-<<<<<<< HEAD
         """query on the current database session"""
         nw_dict = {}
         for clss in classes:
@@ -50,7 +49,7 @@ class DBStorage:
     def new(self, obaj):
         """add the object to the current database session"""
         self.__session.add(obaj)
-=======
+
         """ returns a dictionary of all objects """
         obj_dict = {}
         if cls:
@@ -72,7 +71,6 @@ class DBStorage:
     def new(self, obj):
         """ adds objects to current database session """
         self.__session.add(obj)
->>>>>>> 2796a9e7e0ec4944989c635eb139550a458166e0
 
     def get(self, cls, id):
         """
@@ -101,17 +99,15 @@ class DBStorage:
         """ commits all changes of current database session """
         self.__session.commit()
 
-<<<<<<< HEAD
     def delete(self, obj=None):
         """delete from the current database session obj if not None"""
         if obj is not None:
             self.__session.delete(obaj)
-=======
+
     def delete(self, obj=None):
         """ deletes obj from current database session if not None """
         if obj is not None:
             self.__session.delete(obj)
->>>>>>> 2796a9e7e0ec4944989c635eb139550a458166e0
 
     def reload(self):
         """ creates all tables in database & session from engine """
@@ -126,7 +122,6 @@ class DBStorage:
             calls remove() on private session attribute (self.session)
         """
         self.__session.remove()
-<<<<<<< HEAD
 
     def get(self, cls, id):
         """Retrieve an object"""
