@@ -83,7 +83,7 @@ class FileStorage:
         try:
             with open(fname, mode='r', encoding='utf-8') as f_io:
                 new_objs = json.load(f_io)
-        except Exception:
+        except:
             return
         for o_id, d in new_objs.items():
             k_cls = d['__class__']
@@ -108,22 +108,3 @@ class FileStorage:
             calls the reload() method for deserialization from JSON to objects
         """
         self.reload()
-
-    def get(self, cls, id):
-        """Retrieve an object"""
-        if cls is not None and type(cls) is str and id is not None and\
-           type(id) is str and cls in classes:
-            key = clas + '.' + id
-            obj = self.__objects.get(key, None)
-            return obj
-        else:
-            return None
-
-    def count(self, cls=None):
-        """Count number of objects in storage"""
-        total = 0
-        if type(cls) == str and cls in classes:
-            total = len(self.all(cls))
-        elif cls is None:
-            total = len(self.__objects)
-        return total
