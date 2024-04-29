@@ -42,27 +42,27 @@ class DBStorage:
 
     def all(self, cls=None):
         """query on the current database session"""
-        new_dict = {}
+        nw_dict = {}
         for clss in classes:
             if cls is None or cls is classes[clss] or cls is clss:
                 objs = self.__session.query(classes[clss]).all()
                 for obj in objs:
                     key = obj.__class__.__name__ + '.' + obj.id
-                    new_dict[key] = obj
-        return (new_dict)
+                    nw_dict[key] = obj
+        return (nw_dict)
 
-    def new(self, obj):
+    def new(self, obaj):
         """add the object to the current database session"""
-        self.__session.add(obj)
+        self.__session.add(obaj)
 
     def save(self):
         """commit all changes of the current database session"""
         self.__session.commit()
 
-    def delete(self, obj=None):
+    def delete(self, obaj=None):
         """delete from the current database session obj if not None"""
-        if obj is not None:
-            self.__session.delete(obj)
+        if obaj is not None:
+            self.__session.delete(obaj)
 
     def reload(self):
         """reloads data from the database"""
@@ -75,23 +75,23 @@ class DBStorage:
         """call remove() method on the private session attribute"""
         self.__session.remove()
 
-    def get(self, cls, id):
+    def get(self, clas, id):
         """Retrieve an object"""
-        if cls is not None and type(cls) is str and id is not None and\
-           type(id) is str and cls in name2class:
-            cls = name2class[cls]
-            result = self.__session.query(cls).filter(cls.id == id).first()
+        if clas is not None and type(clas) is str and id is not None and\
+           type(id) is str and clas in name2class:
+            clas = name2class[clas]
+            result = self.__session.query(clas).filter(clas.id == id).first()
             return result
         else:
             return None
 
-    def count(self, cls=None):
+    def count(self, clas=None):
         """Count number of objects in storage"""
         total = 0
-        if type(cls) == str and cls in name2class:
-            cls = name2class[cls]
-            total = self.__session.query(cls).count()
-        elif cls is None:
-            for cls in name2class.values():
-                total += self.__session.query(cls).count()
+        if type(clas) == str and clas in name2class:
+            clas = name2class[clas]
+            total = self.__session.query(clas).count()
+        elif clas is None:
+            for clas in name2class.values():
+                total += self.__session.query(clas).count()
         return total
